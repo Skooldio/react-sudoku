@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Cell from "./Cell";
 
 class App extends Component {
   state = {
@@ -11,9 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="board">
-          {this.state.board.map(row =>
-            row.map(cell => <div className="cell">{cell}</div>)
-          )}
+          {this.state.board.map(row => row.map(cell => <Cell number={cell} />))}
         </div>
         {this.state.complete && <p>Board is complete!</p>}
         {this.state.invalid && <p>Board is invalid!</p>}
