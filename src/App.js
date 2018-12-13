@@ -3,7 +3,9 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    board: [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+    board: [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]],
+    complete: true,
+    invalid: false
   };
   render() {
     return (
@@ -13,8 +15,8 @@ class App extends Component {
             row.map(cell => <div className="cell">{cell}</div>)
           )}
         </div>
-        {this.state.error && <p>Error!</p>}
-        <p>{this.state.message}</p>
+        {this.state.complete && <p>Board is complete!</p>}
+        {this.state.invalid && <p>Board is invalid!</p>}
       </div>
     );
   }
