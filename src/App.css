@@ -1,32 +1,63 @@
 .App {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 25%;
+  height: 150px;
+  float: left;
+  line-height: 150px;
   text-align: center;
+  background: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  color: #444;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.cell:nth-child(-n + 4) {
+  border-top: 3px black solid;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cell:nth-child(n + 13) {
+  border-bottom: 3px black solid;
 }
 
-.App-link {
-  color: #61dafb;
+.cell:nth-child(4n + 1) {
+  border-left: 3px black solid;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell:nth-child(4n) {
+  border-right: 3px black solid;
+}
+
+.cell:nth-child(4n + 2) {
+  border-right: 3px black solid;
+}
+
+.cell:nth-child(5) {
+  border-bottom: 3px black solid;
+}
+
+.cell:nth-child(6) {
+  border-bottom: 3px black solid;
+}
+
+.cell:nth-child(7) {
+  border-bottom: 3px black solid;
+}
+
+.cell:nth-child(8) {
+  border-bottom: 3px black solid;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  display: inline-block;
+  width: 100%;
 }
