@@ -14,13 +14,21 @@ class App extends Component {
     complete: false,
     invalid: false
   };
+  handleClick = (i, j, number) => {
+    console.log(i, j, number);
+  };
   render() {
     return (
       <div className="App">
         <div className="board">
           {this.state.board.map((row, i) =>
             row.map((cell, j) => (
-              <Cell number={cell} isInitial={this.state.initialFlags[i][j]} />
+              <Cell
+                key={`cell-${i}-${j}`}
+                onClick={() => this.handleClick(i, j, cell)}
+                number={cell}
+                isInitial={this.state.initialFlags[i][j]}
+              />
             ))
           )}
         </div>
