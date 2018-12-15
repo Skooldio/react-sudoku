@@ -2,6 +2,7 @@
   width: 600px;
   margin: 0 auto;
   margin-top: 20px;
+  text-align: center;
 }
 
 .cell {
@@ -16,11 +17,14 @@
   color: #444;
   box-sizing: border-box;
   border: 1px solid #ddd;
+  user-select: none;
+  cursor: pointer;
 }
 
 .cell.initial {
   background: #eee;
   color: #666;
+  cursor: initial;
 }
 
 .cell:nth-child(-n + 4) {
@@ -65,4 +69,14 @@ p {
   margin-top: 20px;
   display: inline-block;
   width: 100%;
+}
+
+button {
+  padding: 15px;
+  border: 0;
+  background: #444;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
