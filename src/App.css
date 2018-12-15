@@ -18,6 +18,11 @@
   border: 1px solid #ddd;
 }
 
+.cell.initial {
+  background: #eee;
+  color: #666;
+}
+
 .cell:nth-child(-n + 4) {
   border-top: 3px black solid;
 }

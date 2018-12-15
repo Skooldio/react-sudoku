@@ -1,3 +1,5 @@
 import React from "react";
 
-export default props => <div className="cell">{props.number}</div>;
+export default ({ isInitial, number }) => (
+  <div className={`cell ${isInitial ? "initial" : ""}`}>{number}</div>
+);

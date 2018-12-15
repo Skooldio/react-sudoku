@@ -4,15 +4,25 @@ import Cell from "./Cell";
 
 class App extends Component {
   state = {
-    board: [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]],
-    complete: true,
+    board: [[1, 2, 3, 4], [3, 4, 0, 0], [2, 0, 4, 0], [4, 0, 0, 2]],
+    initialFlags: [
+      [true, true, true, true],
+      [true, true, false, false],
+      [true, false, true, false],
+      [true, false, false, true]
+    ],
+    complete: false,
     invalid: false
   };
   render() {
     return (
       <div className="App">
         <div className="board">
-          {this.state.board.map(row => row.map(cell => <Cell number={cell} />))}
+          {this.state.board.map((row, i) =>
+            row.map((cell, j) => (
+              <Cell number={cell} isInitial={this.state.initialFlags[i][j]} />
+            ))
+          )}
         </div>
         {this.state.complete && <p>Board is complete!</p>}
         {this.state.invalid && <p>Board is invalid!</p>}
